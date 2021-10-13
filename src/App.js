@@ -1,23 +1,21 @@
-import logo from './logo.svg';
 import './App.css';
+import  Block  from './components/Info/infoPomo'
+import { Footer } from './components/Footer/footer';
+import Content from './components/Main/main';
+import Head from './components/Header/header';
+import { useSelector } from 'react-redux';
 
 function App() {
+let colorB = useSelector(state => state.change)
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className="App">
+      <div className={colorB}>
+        <Head />
+        <Content/>
+     </div>
+     <Block />
+     <Footer />
     </div>
   );
 }
